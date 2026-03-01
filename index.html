@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tarefas</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Minhas Tarefas</h1>
+        
+        <div id="errorMessage" class="error-message"></div>
+
+        <form id="taskForm" class="input-container">
+            <input 
+                type="text" 
+                id="taskInput" 
+                class="task-input" 
+                placeholder="Digite uma nova tarefa..."
+            >
+            <button type="submit" class="add-btn">Adicionar Tarefa</button>
+        </form>
+
+        <ul id="taskList" class="task-list">
+        </ul>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
