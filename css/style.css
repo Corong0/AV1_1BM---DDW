@@ -1,0 +1,226 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Courier New', 'IBM Plex Mono', monospace;
+    background-color: #fff8c4;
+    min-height: 100vh;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.container {
+    max-width: 600px;
+    width: 100%;
+}
+
+h1 {
+    color: #5d5d3a;
+    font-size: 28px;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+/* Mensagem de erro */
+#errorMessage {
+    display: none;
+    color: #c41e3a;
+    padding: 8px 0;
+    margin: 15px 0;
+    font-size: 14px;
+    font-weight: 500;
+    animation: slideIn 0.3s ease;
+}
+
+#errorMessage.show {
+    display: block;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Formulário */
+.input-container {
+    display: flex;
+    gap: 12px;
+    margin: 25px 0;
+}
+
+.task-input {
+    flex: 1;
+    padding: 10px 12px;
+    border: 1px solid #ffe680;
+    border-radius: 0;
+    font-size: 15px;
+    font-family: inherit;
+    background-color: #fff;
+    transition: border-color 0.3s ease;
+}
+
+.task-input:focus {
+    outline: none;
+    border-color: #ffd966;
+}
+
+.add-btn {
+    padding: 10px 20px;
+    background-color: #ffeb99;
+    color: #5d5d3a;
+    border: 1px solid #ffe680;
+    border-radius: 0;
+    font-size: 15px;
+    font-weight: 700;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.add-btn:hover {
+    background-color: #ffe066;
+}
+
+.add-btn:active {
+    transform: translateY(1px);
+}
+
+/* Lista de tarefas */
+.task-list {
+    list-style: none;
+    margin-top: 30px;
+}
+
+.task-list li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid #fffacc;
+    transition: opacity 0.2s ease;
+    word-break: break-word;
+    color: #5d5d3a;
+    font-size: 15px;
+}
+
+.task-list li:last-child {
+    border-bottom: none;
+}
+
+.task-list li:hover {
+    opacity: 0.8;
+}
+
+.task-buttons {
+    display: flex;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.edit-btn,
+.remove-btn,
+.confirm-btn,
+.cancel-btn {
+    padding: 6px 10px;
+    border: 1px solid #ffe680;
+    border-radius: 0;
+    font-size: 12px;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.edit-btn {
+    background-color: #fff4cc;
+    color: #5d5d3a;
+}
+
+.edit-btn:hover {
+    background-color: #ffe680;
+}
+
+.remove-btn {
+    background-color: #ffe8cc;
+    color: #5d3636;
+}
+
+.remove-btn:hover {
+    background-color: #ffd966;
+}
+
+.confirm-btn {
+    background-color: #fffacc;
+    color: #5d5d3a;
+}
+
+.confirm-btn:hover {
+    background-color: #ffe680;
+}
+
+.cancel-btn {
+    background-color: #fff9cc;
+    color: #5d5d5d;
+}
+
+.cancel-btn:hover {
+    background-color: #ffe680;
+}
+
+/* Input de edição */
+.edit-input {
+    flex: 1;
+    padding: 8px 10px;
+    border: 1px solid #ffe680;
+    border-radius: 0;
+    font-size: 15px;
+    font-family: inherit;
+    background-color: #fff8c4;
+}
+
+.edit-input:focus {
+    outline: none;
+    border-color: #ffd966;
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+    .container {
+        padding: 0;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    .input-container {
+        flex-direction: column;
+    }
+
+    .add-btn {
+        width: 100%;
+    }
+
+    .task-list li {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .task-buttons {
+        width: 100%;
+        justify-content: flex-start;
+    }
+}
