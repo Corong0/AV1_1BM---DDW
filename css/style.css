@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Courier New', 'IBM Plex Mono', monospace;
-    background-color: #fff8c4;
+    background: linear-gradient(135deg, #1a1a2e 0%, #0f3460 100%);
     min-height: 100vh;
     padding: 40px 20px;
     display: flex;
@@ -20,18 +20,19 @@ body {
 }
 
 h1 {
-    color: #5d5d3a;
+    color: #00f5ff;
     font-size: 28px;
     margin-bottom: 30px;
     text-align: center;
     font-weight: 700;
     letter-spacing: 2px;
+    text-shadow: 0 0 20px rgba(0, 245, 255, 0.5);
 }
 
 /* Mensagem de erro */
 #errorMessage {
     display: none;
-    color: #c41e3a;
+    color: #ff6b6b;
     padding: 8px 0;
     margin: 15px 0;
     font-size: 14px;
@@ -64,34 +65,38 @@ h1 {
 .task-input {
     flex: 1;
     padding: 10px 12px;
-    border: 1px solid #ffe680;
-    border-radius: 0;
+    border: 2px solid #9d4edd;
+    border-radius: 8px;
     font-size: 15px;
     font-family: inherit;
-    background-color: #fff;
-    transition: border-color 0.3s ease;
+    background-color: #2a2a4e;
+    color: #fff;
+    transition: all 0.3s ease;
 }
 
 .task-input:focus {
     outline: none;
-    border-color: #ffd966;
+    border-color: #00f5ff;
+    box-shadow: 0 0 15px rgba(0, 245, 255, 0.3);
 }
 
 .add-btn {
     padding: 10px 20px;
-    background-color: #ffeb99;
-    color: #5d5d3a;
-    border: 1px solid #ffe680;
-    border-radius: 0;
+    background: linear-gradient(135deg, #9d4edd 0%, #7c3aed 100%);
+    color: #fff;
+    border: 2px solid #9d4edd;
+    border-radius: 8px;
     font-size: 15px;
     font-weight: 700;
     font-family: inherit;
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: all 0.3s ease;
 }
 
 .add-btn:hover {
-    background-color: #ffe066;
+    background: linear-gradient(135deg, #00f5ff 0%, #7c3aed 100%);
+    border-color: #00f5ff;
+    box-shadow: 0 0 20px rgba(157, 78, 221, 0.5);
 }
 
 .add-btn:active {
@@ -108,12 +113,15 @@ h1 {
     display: flex;
     align-items: center;
     gap: 12px;
-    padding: 12px 0;
-    border-bottom: 1px solid #fffacc;
-    transition: opacity 0.2s ease;
+    padding: 12px 15px;
+    border-bottom: 1px solid #3a3a5c;
+    transition: all 0.2s ease;
     word-break: break-word;
-    color: #5d5d3a;
+    color: #e0e0f0;
     font-size: 15px;
+    background-color: rgba(42, 42, 78, 0.4);
+    border-radius: 6px;
+    margin-bottom: 8px;
 }
 
 .task-list li:last-child {
@@ -121,7 +129,8 @@ h1 {
 }
 
 .task-list li:hover {
-    opacity: 0.8;
+    background-color: rgba(42, 42, 78, 0.7);
+    border-color: #00f5ff;
 }
 
 .task-buttons {
@@ -135,8 +144,8 @@ h1 {
 .confirm-btn,
 .cancel-btn {
     padding: 6px 10px;
-    border: 1px solid #ffe680;
-    border-radius: 0;
+    border: 1px solid transparent;
+    border-radius: 6px;
     font-size: 12px;
     font-weight: 600;
     font-family: inherit;
@@ -145,55 +154,62 @@ h1 {
 }
 
 .edit-btn {
-    background-color: #fff4cc;
-    color: #5d5d3a;
+    background-color: #00f5ff;
+    color: #1a1a2e;
 }
 
 .edit-btn:hover {
-    background-color: #ffe680;
+    background-color: #7c3aed;
+    color: #fff;
+    box-shadow: 0 0 10px rgba(0, 245, 255, 0.4);
 }
 
 .remove-btn {
-    background-color: #ffe8cc;
-    color: #5d3636;
+    background-color: #ff6b6b;
+    color: #fff;
 }
 
 .remove-btn:hover {
-    background-color: #ffd966;
+    background-color: #ff5252;
+    box-shadow: 0 0 10px rgba(255, 107, 107, 0.4);
 }
 
 .confirm-btn {
-    background-color: #fffacc;
-    color: #5d5d3a;
+    background-color: #51cf66;
+    color: #1a1a2e;
 }
 
 .confirm-btn:hover {
-    background-color: #ffe680;
+    background-color: #40c057;
+    box-shadow: 0 0 10px rgba(81, 207, 102, 0.4);
 }
 
 .cancel-btn {
-    background-color: #fff9cc;
-    color: #5d5d5d;
+    background-color: #a8a8c0;
+    color: #1a1a2e;
 }
 
 .cancel-btn:hover {
-    background-color: #ffe680;
+    background-color: #969aaf;
+    box-shadow: 0 0 10px rgba(168, 168, 192, 0.4);
 }
 
 /* Input de edição */
 .edit-input {
     flex: 1;
     padding: 8px 10px;
-    border: 1px solid #ffe680;
-    border-radius: 0;
+    border: 2px solid #9d4edd;
+    border-radius: 6px;
     font-size: 15px;
     font-family: inherit;
-    background-color: #fff8c4;
+    background-color: #2a2a4e;
+    color: #fff;
 }
 
 .edit-input:focus {
     outline: none;
-    border-color: #ffd966;
+    border-color: #00f5ff;
+    box-shadow: 0 0 15px rgba(0, 245, 255, 0.3);
 }
 
 /* Responsivo */
